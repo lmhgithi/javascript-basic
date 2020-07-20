@@ -23,11 +23,13 @@ describe('for object', () => {
     expect(person.whatTheHellIsThat).toEqual(expected);
   });
 
-  fit('should remove object property using delete operator', () => {
+  it('should remove object property using delete operator', () => {
     const person = { name: 'Bob' };
 
     // <--start
     // Please write a line of code to remove the `name` property.
+    // person.name = undefined;
+    delete person.name;
     // --end->
 
     expect(person.name).toBeUndefined();
@@ -40,7 +42,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = ['name', 'yearOfBirth'];
     // --end->
 
     expect(Object.keys(person)).toEqual(expected);
@@ -57,7 +59,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'Hello, I am John';
     // --end->
 
     expect(person.greeting()).toEqual(expected);
@@ -69,7 +71,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'Bob';
     // --end->
 
     expect(name).toEqual(expected);
@@ -81,7 +83,8 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = '{"name":"Bob","yearOfBirth":2019}';
+    // console.log('log: ', expected);
     // --end->
 
     expect(json).toEqual(expected);
@@ -93,7 +96,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = { color: 'Red', value: '#ff0000' };
     // --end->
 
     expect(color).toEqual(expected);
@@ -107,7 +110,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'The white rabbit says Hello.';
     // --end->
 
     expect(rabbit.speak('Hello')).toEqual(expected);
@@ -123,7 +126,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'The white rabbit says Hello.';
     // --end->
 
     expect(rabbit.speak('Hello')).toEqual(expected);
@@ -138,7 +141,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = [0, 2, 3];
     // --end->
 
     expect(actual).toEqual(expected);
@@ -149,7 +152,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = Object.prototype;
     // --end->
 
     expect(Object.getPrototypeOf(emptyObject)).toBe(expected);
@@ -160,7 +163,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = null;
     // --end->
 
     expect(Object.getPrototypeOf(objectPrototype)).toEqual(expected);
@@ -177,7 +180,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'The killer rabbit says SKREEEE.';
     // --end->
 
     expect(words).toEqual(expected);
@@ -192,7 +195,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = undefined;
+    const expected = 'The weird rabbit says ?_?.';
     // --end->
 
     expect(rabbit.speak('?_?')).toEqual(expected);
@@ -208,15 +211,15 @@ describe('for object', () => {
     // * rabbitFunctionPrototype
     // * prototypeOfRabbitFunction
     // * functionPrototype
-    const expectedPrototypeOfRabbitInstance = undefined;
-    const expectedPrototypeOfRabbitFunction = undefined;
+    const expectedPrototypeOfRabbitInstance = rabbitFunctionPrototype;
+    const expectedPrototypeOfRabbitFunction = functionPrototype;
     // --end->
 
     expect(prototypeOfRabbitInstance).toBe(expectedPrototypeOfRabbitInstance);
     expect(prototypeOfRabbitFunction).toBe(expectedPrototypeOfRabbitFunction);
   });
 
-  it('should use the class notation rather than the awkward function', () => {
+  fit('should use the class notation rather than the awkward function', () => {
     class Rabbit {
       constructor(type) { this.type = type; }
 
