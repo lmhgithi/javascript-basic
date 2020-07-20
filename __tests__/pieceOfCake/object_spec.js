@@ -4,7 +4,7 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expectedName = undefined;
+    const expectedName = 'Bob';
     // --end->
 
     expect(person.name).toEqual(expectedName);
@@ -17,18 +17,17 @@ describe('for object', () => {
 
     // <--start
     // Please write down the correct value. You should write the final result directly.
-    const expected = {};
+    const expected = undefined;
     // --end->
 
     expect(person.whatTheHellIsThat).toEqual(expected);
   });
 
-  it('should remove object property using delete operator', () => {
+  fit('should remove object property using delete operator', () => {
     const person = { name: 'Bob' };
 
     // <--start
     // Please write a line of code to remove the `name` property.
-
     // --end->
 
     expect(person.name).toBeUndefined();
